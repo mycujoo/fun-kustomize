@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fun
+  labels:
+    customMetrics: "true"
+spec:
+  type: ClusterIP
+  ports:
+    - name: appPROTOCOL
+      port: svcPORT
+      targetPort: appPORT
+    - name: metrics
+      port: 10255
+      targetPort: 10255

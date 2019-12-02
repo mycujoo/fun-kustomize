@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fun
+spec:
+  type: ClusterIP
+  ports:
+    - name: appPROTOCOL
+      port: svcPORT
+      targetPort: appPORT

@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: fun
+spec:
+  replicas: appREPLICAS
+  template:
+    metadata:
+      labels:
+    spec:
+      containers:
+      - name: fun
+        image: appIMAGE
+        ports:
+          - containerPort: appPORT
+        resources:
+        livenessProbe:
+            tcpSocket:
+              port: appPORT
+            initialDelaySeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /
+            port: appPORT
+          initialDelaySeconds: 2
+          timeoutSeconds: 10
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: IN
+                  values:
+                  - appNAME
+              topologyKey: "kubernetes.io/hostname"
