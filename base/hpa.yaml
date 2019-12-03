@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: fun
+  labels:
+spec:
+  scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: fun
+    minReplicas: minREPLICAS
+    maxReplicas: maxREPLICAS
+    targetCPUUtilizationPercentage: appmaxCPU
