@@ -8,6 +8,6 @@ spec:
       apiVersion: apps/v1
       kind: Deployment
       name: fun
-    minReplicas: minREPLICAS
-    maxReplicas: maxREPLICAS
-    targetCPUUtilizationPercentage: appmaxCPU
+  minReplicas: minREPLICAS
+  maxReplicas: maxREPLICAS
+  targetCPUUtilizationPercentage: appmaxCPU
