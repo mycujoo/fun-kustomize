@@ -24,6 +24,20 @@ spec:
             port: appPORT
           initialDelaySeconds: 2
           timeoutSeconds: 10
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+          requests:
+            cpu: 250m
+            memory: 250Mi
+          resources:
+            limits:
+              cpu: applimitsCPU
+              memory: applimitsMEM
+            requests:
+              cpu: apprequestsCPU
+              memory: apprequestsMEM
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
