@@ -32,7 +32,7 @@ spec:
               labelSelector:
                 matchExpressions:
                 - key: app
-                  operator: IN
+                  operator: In
                   values:
                   - appNAME
               topologyKey: "kubernetes.io/hostname"
