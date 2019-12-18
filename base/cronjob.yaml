@@ -10,15 +10,15 @@ spec:
       template:
         metadata:
           labels:
-      spec:
-        restartPolicy: Never
-        containers:
-        - name: fun
-          imagePullPolicy: Always
-          image: fun
-          resources:
-            limits:
-              memory: applimitsMEM
-            requests:
-              cpu: apprequestsCPU
-              memory: apprequestsMEM
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: fun
+            imagePullPolicy: Always
+            image: fun
+            resources:
+              limits:
+                memory: applimitsMEM
+              requests:
+                cpu: apprequestsCPU
+                memory: apprequestsMEM
