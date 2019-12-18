@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: fun
 spec:
-  schedule: appSCHEDULE
+  schedule: "* */6 * * *"
   concurrencyPolicy: appPOLICY
   jobTemplate:
     spec:
