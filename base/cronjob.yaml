@@ -1,0 +1,24 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: fun
+spec:
+  schedule: "* */6 * * *"
+  concurrencyPolicy: appPOLICY
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: fun
+            imagePullPolicy: Always
+            image: fun
+            resources:
+              limits:
+                memory: applimitsMEM
+              requests:
+                cpu: apprequestsCPU
+                memory: apprequestsMEM
